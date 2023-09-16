@@ -48,6 +48,7 @@ export default {
         description: responseData[key].description,
         hourlyRate: responseData[key].hourlyRate,
         areas: responseData[key].areas,
+        id: key,
       };
 
       coaches.push(coach);
