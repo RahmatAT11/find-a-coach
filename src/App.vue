@@ -13,8 +13,11 @@ import TheHeader from "./components/layout/TheHeader";
 export default {
   components: {
     TheHeader,
-  }
-}
+  },
+  created() {
+    this.$store.dispatch("tryLogin");
+  },
+};
 </script>
 
 <style>
@@ -47,7 +50,8 @@ body {
 }
 
 .route-leave-active {
-  transition: all 0.3s ease-in;}
+  transition: all 0.3s ease-in;
+}
 
 .route-enter-to,
 .route-leave-from {
