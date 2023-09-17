@@ -5,12 +5,22 @@
       <ul>
         <li>
           <router-link to="/coaches">All Coaches</router-link>
-          <router-link to="/requests">Requests</router-link>
+          <router-link to="/requests" v-if="isLoggedIn">Requests</router-link>
         </li>
       </ul>
     </nav>
   </header>
 </template>
+
+<script>
+export default {
+  computed: {
+    isLoggedIn() {
+      return this.$store.getters.isAuthenticated;
+    },
+  },
+};
+</script>
 
 <style scoped>
 header {
